@@ -1,0 +1,34 @@
+# U-Installer
+
+u-installer is a micro installation system, written in C89.
+
+## Syntax
+
+- Packing
+
+```
+> cat elf64.conf
+elf64
+sh ./install.sh
+
+install.sh
+out/
+> uins elf64.conf myprog.upa
+```
+
+Generates `myprog.upa` from `uins.conf` configuration file.
+
+- Installation
+
+```
+./myprog.upa
+```
+
+Execute `myprog.upa` installer file.
+
+## Scripting
+
+- First line of configuration is output format (elf64, elf86, exe64, exe86)
+- Second line of configuration is entry-point
+- Lines since third line are target files/directories
+- Blank line is ignored
